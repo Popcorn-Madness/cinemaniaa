@@ -1,0 +1,28 @@
+@media (max-width: 360px) {
+  .hero-container {
+    width: 320px;
+    height: 380px;
+    top: 48px;
+    background: linear-gradient(
+      86.47deg,
+      #111111 33.63%,
+      rgba(17, 17, 17, 0) 76.86%
+    );
+  }
+  .hero-content {
+    width: 320px;
+    height: 380px;
+    top: 48px;
+    color: white;
+  }
+  .hero-button {
+    width: 117px;
+    height: 38px;
+    border-radius: 74px;
+    gap: 8px;
+    padding-top: 12px;
+    padding-right: 24px;
+    padding-bottom: 12px;
+    padding-left: 24px;
+  }
+}

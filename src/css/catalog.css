@@ -110,6 +110,11 @@ button {
   background-color: #f87719;
   color: white;
 }
+
+#search-btn {
+  cursor: pointer;
+}
+
 @media (min-width: 768px) {
   .search-container {
     display: flex;

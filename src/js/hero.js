@@ -5,10 +5,10 @@ export function hero() {
   const modal = document.getElementById("movieModal");
   const closeModalButton = document.querySelector(".close-btn");
   const movieDescriptionElement = document.getElementById("movieDescription");
-  const movieTrailerLink = document.getElementById("movieTrailerLink");
+  // const movieTrailerLink = document.getElementById("movieTrailerLink");
   const trailerContainer = document.getElementById("trailerContainer");
   const trailerIframe = document.getElementById("trailerIframe");
-  const closeTrailerButton = document.getElementById("closeTrailerBtn");
+  // const closeTrailerButton = document.getElementById("closeTrailerBtn");
 
   async function getTrendMovies() {
     let key = "cccc5e6104b30f55a3f3b525ec4830b1";
@@ -45,7 +45,7 @@ export function hero() {
 
   function displayMovie(movie) {
     heroSection.style.backgroundImage = `url(https://image.tmdb.org/t/p/original/${movie.backdrop_path})`;
-    heroSection.style.backgroundSize = "cover";
+    // heroSection.style.backgroundSize = "cover";
 
     heroSection.innerHTML = `
         <div class="hero-content">
@@ -134,11 +134,11 @@ export function hero() {
     trailerIframe.src = ""; // Stop the video
   });
 
-  closeTrailerButton.addEventListener("click", () => {
-    modal.style.display = "none";
-    trailerContainer.style.display = "none"; // Hide trailer container when closing trailer
-    trailerIframe.src = ""; // Stop the video
-  });
+  // closeTrailerButton.addEventListener("click", () => {
+  //   modal.style.display = "none";
+  //   trailerContainer.style.display = "none"; // Hide trailer container when closing trailer
+  //   trailerIframe.src = ""; // Stop the video
+  // });
 
   window.onclick = function (event) {
     if (event.target === modal) {

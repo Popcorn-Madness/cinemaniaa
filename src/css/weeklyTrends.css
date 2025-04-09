@@ -125,7 +125,7 @@ option {
     height: auto;
   }
   .weekly-see {
-    width: 90%;
+    width: 700px;
   }
   .see {
     font-size: 24px;
@@ -149,11 +149,11 @@ option {
   }
   .weekly-trends {
     font-size: 28px;
-    width: 215px;
-    height: 33px;
+    width: auto;
+    height: auto;
   }
   .weekly-see {
-    width: 100%;
+    width: 1200px;
   }
   .see {
     font-size: 24px;

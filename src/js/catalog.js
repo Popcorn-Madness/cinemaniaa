@@ -4,19 +4,31 @@ let url = "https://api.themoviedb.org/3";
 // Sayfa bilgileri
 let currentPage = 1; // Başlangıç sayfası
 let totalPages = 1; // Toplam sayfa sayısı
-let pageGroupStart = 1; // Grupların başlangıcı (ilk grup 1-5)
-window.onload = function () {
+let pageGroupStart = 1; // Grupların başlangıcı (ilk grup 1-3)
+
+window.addEventListener("DOMContentLoaded", () => {
   catalogFun(currentPage); // İlk sayfayı yükle
   initializeSearch(); // Arama fonksiyonunu başlat
-};
+});
 // Film kataloğunu al ve sayfalama butonlarını oluştur
 export async function catalogFun(page = 1, query = "") {
+  // DOM'dan catalog öğesini seç
   let catalog = document.querySelector(".catalog");
+  console.log(catalog);
+  // catalog öğesinin doğru şekilde seçildiğini kontrol et
+  if (!catalog) {
+    console.error(
+      "Catalog öğesi bulunamadı! Lütfen HTML'de .catalog öğesinin bulunduğundan emin olun."
+    );
+    return; // Eğer catalog bulunamazsa fonksiyonu durdur
+  }
   catalog.innerHTML = ""; // Önceden var olan içeriği temizle
   try {
+    // API URL'si
     let endpoint = query
       ? `${url}/search/movie?api_key=${apiKey}&language=tr-TR&page=${page}&query=${query}`
       : `${url}/movie/popular?api_key=${apiKey}&language=tr-TR&page=${page}`;
+    // API isteğini gönder
     const response = await axios.get(endpoint);
     let movies = response.data.results;
     totalPages = response.data.total_pages; // Toplam sayfa sayısını al
@@ -29,6 +41,7 @@ export async function catalogFun(page = 1, query = "") {
         "<p>We don't have any results matching your search.</p>" +
         "</div>";
     } else {
+      // Filmler varsa, her birini listele
       movies.forEach((movie) => {
         let movieDiv = document.createElement("div");
         movieDiv.classList.add("movie-card");
@@ -143,6 +156,7 @@ function getGenres(genreIds) {
 function initializeSearch() {
   const searchButton = document.getElementById("search-btn");
   const searchInput = document.getElementById("genre-select");
+  // Arama butonuna tıklandığında
   searchButton.addEventListener("click", () => {
     const query = searchInput.value.trim();
     if (query) {

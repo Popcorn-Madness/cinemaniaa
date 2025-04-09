@@ -22,27 +22,37 @@ export function upComing() {
 
       // Film kartını oluştur
       upcomingContainer.innerHTML = `
-      <div class="movie-card">
+      <div class="upcoming-movie-card">
         <img src="https://image.tmdb.org/t/p/w500${randomMovie.poster_path}" 
-             alt="${
-               randomMovie.title
-             }" width="280" height="406" class="movie-poster">
-        <h3 class="movie-title">${randomMovie.title}</h3>
+             alt="${randomMovie.title}" class="upcoming-movie-poster">
         <div class="movie-info">
-          <p><strong>Release date:</strong> <span class="release-date-value">${formatDate(
-            randomMovie.release_date
-          )}</span></p>
+        <h3 class="movie-title">${randomMovie.title}</h3>
+
+        <div class="release-vote-popular-genre">
+        
+        <div class="release-vote">
+              <p><strong>Release date:</strong> <span class="release-date-value">${formatDate(
+                randomMovie.release_date
+              )}</span></p>
           <p><strong>Vote / Votes:</strong><span class="vote-average">${
             randomMovie.vote_average
           }</span> / <span class="vote-count">${
         randomMovie.vote_count
       }</span></p>
-          <p><strong>Popularity:</strong> <span class="popularity">  ${randomMovie.popularity.toFixed(
-            1
-          )} </span></p>
+        </div>
+        
+        <div class="popular-genre"> 
+        <p><strong>Popularity:</strong> <span class="popularity">  ${randomMovie.popularity.toFixed(
+          1
+        )} </span></p>
           <p><strong>Genre:</strong> <span class="genre">${getGenres(
             randomMovie.genre_ids
           )}</p></span> 
+        </div>
+         
+        </div>
+        
+          
           <h3 class="about">ABOUT</h3>
           <p class="movie-overview">${randomMovie.overview}</p>
           <button class="add-to-library"> Add to my library</button>

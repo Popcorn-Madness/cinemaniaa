@@ -1,19 +1,20 @@
 /* Genel stiller */
-body {
+/* body {
   font-family: "Roboto", sans-serif;
-  background-color: #121212;
-  color: #e0e0e0;
+
+  
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-}
+} */
 
-.container {
+.upcomingContainer {
   width: 100%;
-  max-width: 320px;
+  /* min-width: ;
+  max-width: 320px; */
   /* Görseldeki genişliğe yakın */
   padding: 10px;
 }
@@ -25,23 +26,27 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 } */
 
+.upcomingTitle {
+  margin-left: 22px;
+}
+
 .movie-container {
   padding: 22px;
 }
 
-.movie-card {
+.upcoming-movie-card {
   display: flex;
   flex-direction: column;
   /* align-items: center; */
 }
 
-.movie-poster {
+.upcoming-movie-poster {
   border-radius: 8px;
   margin-bottom: 10px;
   width: 100%;
   /* Mobil uyumlu olması için */
-  max-width: 280px;
-  height: auto;
+  /* max-width: 280px; */
+  /* height: auto; */
 }
 
 .movie-info {
@@ -52,15 +57,18 @@ body {
         font-size: 16px;
         line-height: 100%;
         letter-spacing: 0%; */
-  color: #b7b7b7;
+  /* color: #b7b7b7; */
   margin-right: 57px;
 }
 
+.movie-info {
+  gap: 50px;
+}
 .movie-title {
   /* margin: 0 0 10px 0;
     font-weight: 700;
     font-size: 1.1em; */
-
+  /* color: white; */
   font-family: Roboto;
   font-weight: 500 bold;
   font-size: 20px;
@@ -80,34 +88,36 @@ body {
 .vote-average {
   background-color: white;
   color: black;
-  margin-left: 35px;
+  margin-left: 44px;
   border-radius: 5px;
-  padding-right: 2px;
-  padding-left: 2px;
+  padding-right: 1px;
+  padding-left: 1px;
   padding-bottom: 1px;
   padding-top: 1px;
   border-color: #ffffff;
+  font-size: 14px;
 }
 
 .vote-count {
   background-color: white;
   color: black;
   border-radius: 5px;
-  padding-right: 2px;
+  padding-right: 1px;
   padding-bottom: 1px;
-  padding-left: 2px;
+  padding-left: 1px;
   padding-top: 1px;
   border-color: #ffffff;
+  font-size: 14px;
 }
 
 .popularity {
-  color: white;
-  margin-left: 45px;
+  /* color: white; */
+  margin-left: 50px;
 }
 
 .genre {
-  color: white;
-  margin-left: 70px;
+  /* color: white; */
+  margin-left: 80px;
 }
 
 .about {
@@ -115,43 +125,28 @@ body {
 }
 
 .movie-overview {
-  color: white;
+  /* color: white; */
   margin-top: 10px;
   line-height: 1.6;
 }
 
-/* .add-to-library {
-    background-color:linear-gradient(to right, #FFC226, #F84119) ;
-    color: #121212;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 74px;
-    margin-top: 15px;
-    cursor: pointer;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.add-to-library:hover {
-    background-color: #ffc107;
-} */
-
-button {
+.add-to-library {
   background: linear-gradient(to right, #ffc226, #f84119);
-  /* Sağdan sola geçiş */
-  color: #121212;
-  padding: 10px 20px;
+  color: #111111;
+  font-weight: 500;
+  font-size: 14px;
   border: none;
-  cursor: pointer;
+  padding: 10px 15px;
   border-radius: 74px;
   margin-top: 15px;
-  width: 100%;
+  cursor: pointer;
+  width: 155px;
+  height: 40px;
   box-sizing: border-box;
 }
 
-button:hover {
-  background: linear-gradient(to right, #ffc226, #ffc107);
-  /* Hover efekti */
+.add-to-library:hover {
+  background-color: #ffc107;
 }
 
 /* Loader stili (isteğe bağlı) */
@@ -176,114 +171,72 @@ button:hover {
     transform: rotate(360deg);
   }
 }
+/*TABLET*/
+@media (min-width: 768px) {
+  .upcomingContainer {
+    width: auto;
+    height: auto;
+  }
 
-/* Mobil uyumluluk için */
-@media (max-width: 480px) {
-  .container {
+  /* movie-poster ve movie-card a müdahale ettiğim zaman Nur un ki kayıyor */
+  .upcoming-movie-poster {
+    width: 704px;
+    height: 400px;
+  }
+
+  .upcoming-movie-card {
     width: 100%;
-    padding: 10px;
-  }
-}
-
-.movie-title {
-  font-size: 18px;
-}
-
-.movie-info {
-  margin-right: 0; /* Film bilgisi için sağdaki boşluk kaldırıldı */
-}
-
-.vote-average,
-.vote-count {
-  margin-left: 10px;
-  padding: 3px;
-}
-
-/* Tablet Uyumluluğu (Mobilden büyük, masaüstünden küçük) */
-@media (min-width: 481px) and (max-width: 768px) {
-  .container {
-    width: 90%;
-    max-width: 600px;
-  }
-  /*
-    .movie-title {
-        font-size: 22px;
-    }
-    */
-  .movie-poster {
-    max-width: 320px;
+    height: auto;
   }
 
-  .weekly-trends {
-    font-size: 18px;
-  }
-
-  .movie-info {
-    margin-right: 20px;
-  }
-
-  .vote-average {
-    margin-left: 35px;
-    padding: 2px;
-  }
-
-  .vote-count {
-    margin-left: 10px;
-    padding: 2px;
-  }
-}
-
-/* Masaüstü Uyumluluğu */
-@media (min-width: 1280px) {
-  .container {
-    width: 80%;
-    max-width: 1200px;
+  .release-vote-popular-genre {
     display: flex;
-    gap: 16px;
+    flex-direction: row;
+    gap: 131px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .upcomingContainer {
+    width: 1211px;
+    height: 519px;
+    margin-left: 100px;
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    /* padding-left: 5px; */
+  }
+  .upcoming-section {
+    margin-bottom: 200px;
   }
 
-  .movie-title {
-    font-size: 24px;
-    padding-bottom: 20px;
-    padding-top: 20px;
-
-    font-family: Roboto;
-    font-weight: bold;
-    font-size: 24px;
-    text-transform: uppercase;
-    margin-bottom: 28px;
-    padding: 0;
+  .upcoming-movie-card {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    /* padding-left: 5px; */
   }
 
-  .movie-card {
-    flex-direction: column; /* DİKEYDEN YATAYA */
-    gap: 30px; /* İki kolon arası boşluk */
-    align-items: flex-start;
+  .upcoming-movie-poster {
+    min-width: 805px;
+    height: 458px;
   }
 
-  .movie-poster {
-    max-width: 50%; /* Sol tarafta poster */
+  .release-vote-popular-genre {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
   }
 
   .movie-info {
-    margin-right: 10px;
-    max-width: 50%; /* Sağ tarafta metin */
-    /* display: flex; */
+    height: 458px;
+    width: 390px;
+    display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 10px;
   }
 
-  .vote-average,
-  .vote-count {
-    margin-left: 20px;
-    padding: 6px;
-  }
-
-  .popularity {
-    margin-left: 50px;
-  }
-
-  .genre {
-    margin-left: 55px;
+  .movie-overview {
+    font-size: 14px;
   }
 }

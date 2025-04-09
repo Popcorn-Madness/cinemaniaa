@@ -1,40 +1,48 @@
-/* Modal pencere için basit stil */
+/* Modal için */
 .modal {
   display: none;
-  position: absolute;
   z-index: 1;
-  left: 50%;
-  top: 50%;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute; /* Modalın sabit pozisyonda olmasını sağlar, ekran kaydırılsa bile ortada kalır */
+  left: 50%; /* Ekranın ortasına yerleştirir */
+  top: 50%; /* Ekranın ortasına yerleştirir */
+  transform: translate(-50%, -50%); /* Modalı hem yatay hem de dikey ortalar */
+  width: 80%; /* Modalın genişliğini ayarlayın */
+  max-width: 600px; /* Maksimum genişlik sınırı */
+  background-color: rgba(0, 0, 0, 0.4); /* Yarı şeffaf arka plan */
 }
 
+/* Modal içerik stili */
 .modal-content {
-  background-color: transparent;
-  margin: 15% auto;
+  background-color: #fefefe;
+  margin: 0;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
   color: black;
+  border-radius: 8px; /* Köşelere yuvarlaklık ekler */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Modalın etrafına gölge efekti */
 }
 
+/* Kapatma butonu stili */
 .close-btn {
   color: #aaa;
   font-size: 28px;
   font-weight: bold;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
 }
 
 .close-btn:hover,
 .close-btn:focus {
   color: black;
   text-decoration: none;
-  cursor: pointer;
+}
+
+#trailerIframe {
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
 .hero-container {

@@ -5,11 +5,12 @@ import { getMovies } from "./js/weeklyTrends";
 import { upComing } from "./js/upComing";
 import { footer } from "./js/footer";
 import { catalogFun } from "./js/catalog";
+
 header();
 hero();
 getMovies();
-// weeklyTrends();
 // moviePopUp();
+// weeklyTrends();
 upComing();
 footer();
 catalogFun();

@@ -7,7 +7,7 @@
   margin: 0 auto;
 }
 .vite-promo-thumb::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -41,7 +41,7 @@
   letter-spacing: 0.04em;
 }
 .main-title-link::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 4%;
   left: 50%;

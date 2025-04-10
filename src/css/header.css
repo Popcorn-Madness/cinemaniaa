@@ -1,4 +1,43 @@
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%); /* Başlangıçta sola gizlenmiş */
+  }
+  100% {
+    transform: translateX(0); /* Son durumda normal pozisyona gelsin */
+  }
+}
+.logo-link {
+  animation: slideIn 1s ease-out forwards; /* 1 saniyelik animasyon, kolayca bitir */
+}
+/* Animasyon stili NUR EKLEDİ*/
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100%); /* Başlangıçta sağda gizlenmiş */
+  }
+  100% {
+    transform: translateX(0); /* Son durumda normal pozisyona gelsin */
+  }
+}
+.header__theme-switcher {
+  animation: slideInRight 1s ease-out forwards; /* 1 saniyelik animasyon */
+}
+/* Animasyon stili */
+/*NUR EKLEDİ*/
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%); /* Başlangıçta sola gizlenmiş */
+  }
+  100% {
+    transform: translateX(0); /* Son durumda normal pozisyona gelsin */
+  }
+}
+.logo-link {
+  animation: slideIn 1s ease-out forwards; /* 1 saniyelik animasyon, kolayca bitir */
+}
+
 /* === Mobile First === */
+
 .site-header {
   justify-content: space-between;
   align-items: center;

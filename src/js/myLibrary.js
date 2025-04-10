@@ -43,7 +43,7 @@ function loadLibraryMovies(genreId = "") {
     : movieLibrary;
 
   if (filtered.length === 0) {
-    catalog.innerHTML = `<div class="no-results-message"><p>OOPS...</p><p>Library boş.</p></div>`;
+    catalog.innerHTML = `<div class="no-results-message"><p>OOPS...</p><p>Your library is empty..</p></div>`;
     return;
   }
 

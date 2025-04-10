@@ -5,6 +5,7 @@ import { getMovies } from "./js/weeklyTrends";
 import { upComing } from "./js/upComing";
 import { footer } from "./js/footer";
 import { catalogFun } from "./js/catalog";
+// import { myLibrary } from "./js/myLibrary";
 
 header();
 hero();
@@ -14,3 +15,4 @@ getMovies();
 upComing();
 footer();
 catalogFun();
+// myLibrary();

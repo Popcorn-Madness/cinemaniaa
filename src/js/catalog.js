@@ -49,7 +49,7 @@ export async function catalogFun(page = 1, query = "") {
           <div class="image-container">
             <img src="https://image.tmdb.org/t/p/w500${
               movie.poster_path
-            }" alt="${movie.title}" width="280" height="406">
+            }" alt="${movie.title}">
           </div>
           <div class="movie-details">
             <div class="movie-name">

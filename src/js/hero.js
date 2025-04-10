@@ -92,7 +92,9 @@ export function hero() {
         <div class="hero-content-default">
         <h1>Let’s Make Your Own Cinema</h1>
         <p>Is a guide to creating a personalized movie theater experience. You'll need a projector, screen, and speakers.</p>
+      
         <button class="started">Get Started</button>
+    
         </div>`;
   }
 

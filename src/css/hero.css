@@ -14,10 +14,36 @@
 /* Modal içerik stili */
 .modal-content {
   width: 280px;
-  height: 289px;
+  height: auto;
   background-color: #111111;
   border-radius: 16px;
   box-shadow: 1px 1px 14px 4px #ff6b086b;
+}
+
+.hero-modal-movie-poster {
+  width: 248px;
+  border-radius: 5px;
+  margin-bottom: 22px;
+  margin-left: 16px;
+}
+
+.hero-modal-info {
+  margin-left: 16px;
+}
+
+.hero-modal-info h2 {
+  font-weight: 500;
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  color: #ffffff;
+  margin-bottom: 29px;
+}
+
+.hero-modal-info p {
+  font-weight: 500;
+  font-size: 16px;
+  color: #b7b7b7;
+  margin-bottom: 12px;
 }
 
 /* Kapatma butonu stili */
@@ -156,7 +182,7 @@
     margin-bottom: 32px;
   }
 
-  ..started {
+  .started {
     width: 120px;
     height: 40px;
   }
@@ -176,14 +202,61 @@
     font-size: 44px;
   }
 
+  .modal {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+  }
+
   .modal-content {
-    width: 609px;
-    height: 400px;
+    width: 704px;
+    height: auto;
     padding: 16px 16px 16px 50px;
   }
 
   #trailerIframe {
-    width: 570px;
+    width: 680px;
     height: 340px;
+  }
+
+  .modal-body {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+  }
+
+  .hero-modal-movie-poster {
+    width: 294px;
+    height: 400px;
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+
+  .hero-modal-info p {
+    width: 300px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .modal-content {
+    width: 846px;
+  }
+
+  .hero-modal-movie-poster {
+    width: 375px;
+    height: 478px;
+    margin-left: 30px;
+    /* margin-right: 20px; */
+  }
+
+  .modal {
+    position: absolute;
+    top: 60%;
+    left: 35%;
+  }
+
+  #trailerIframe {
+    width: 820px;
+    height: 500px;
   }
 }

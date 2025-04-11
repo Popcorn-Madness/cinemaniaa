@@ -64,7 +64,11 @@ export function hero() {
   }
 
   function displayMovie(movie) {
-    heroSection.style.backgroundImage = `url(https://image.tmdb.org/t/p/original/${movie.backdrop_path})`;
+    // heroSection.style.backgroundImage = `url(https://image.tmdb.org/t/p/original/${movie.backdrop_path})`;
+    heroSection.style.backgroundImage = `
+  linear-gradient(to right, #111 40%, rgba(17, 17, 17, 0) 80%),
+  url(https://image.tmdb.org/t/p/original/${movie.backdrop_path})
+`;
 
     heroSection.innerHTML = `
       <div class="hero-content">

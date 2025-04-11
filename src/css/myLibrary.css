@@ -11,7 +11,7 @@
   width: 173px;
   height: 44px;
   background-color: transparent;
-  border: 1px solid #ffffff;
+  border: 1px solid #ffc226;
 }
 .my-library-catalog {
   display: flex;
@@ -133,6 +133,7 @@
 }
 .genreSelect {
   margin-left: 10px;
+  border: 1px solid #ffc226;
 }
 @media (min-width: 768px) {
   .my-library-catalog {
@@ -171,7 +172,7 @@
   }
   .genreSelect {
     background-color: transparent;
-    border: 1px solid #ffffff;
+    border: 1px solid #ffc226;
     font-size: 18px;
     font-weight: 500;
   }

@@ -6,6 +6,7 @@ import { upComing } from "./js/upComing";
 import { footer } from "./js/footer";
 import { catalogFun } from "./js/catalog";
 // import { myLibrary } from "./js/myLibrary";
+import { scroll } from "./js/scroll";
 
 header();
 hero();
@@ -16,3 +17,4 @@ upComing();
 footer();
 catalogFun();
 // myLibrary();
+scroll();

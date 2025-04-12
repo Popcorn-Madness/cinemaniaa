@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catalog</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <!-- <link rel="stylesheet" href="moviePopup.css" /> -->
+    <script type="module" crossorigin src="/cinemaniaa/assets/vendor-DXmaTlaC.js"></script>
+    <script type="module" crossorigin src="/cinemaniaa/assets/main-Dov7qTcL.js"></script>
+    <script type="module" crossorigin src="/cinemaniaa/assets/moviePopUp-D7awKcYM.js"></script>
+    <link rel="stylesheet" crossorigin href="/cinemaniaa/assets/main-CVrjvau-.css">
+    <link rel="stylesheet" crossorigin href="/cinemaniaa/assets/catalog-BOc9cO1a.css">
+  </head>
+  <body>
+    <button id="scrollToTopBtn" title="Scroll Up">
+      <img
+        src="../img/logo.svg"
+        loading="lazy"
+        alt="logo"
+        class="logo-img fas"
+      />
+    </button>
+    <header class="site-header">
+  <div class="logo">
+    <a href="../index.html" class="logo-link">
+      <img src="../img/logo.svg" loading="lazy" alt="logo" class="logo-img" />
+      <p class="logo-text">Cinemania</p>
+    </a>
+  </div>
+
+  <nav class="nav-bar">
+    <ul class="nav-list">
+      <li class="nav-list__item">
+        <a href="../index.html" class="nav-link">HOME</a>
+      </li>
+      <li class="nav-list__item">
+        <a href="../catalog.html" class="nav-link">CATALOG</a>
+      </li>
+      <li class="nav-list__item">
+        <a href="../myLibrary.html" class="nav-link">MY LIBRARY</a>
+      </li>
+    </ul>
+  </nav>
+
+  <button type="button" class="header__menu-button" data-menu-open>MENU</button>
+
+  <div class="header__theme-switcher" id="theme-switcher">
+    <svg id="icon-moon">
+      <use href="../img/night-mode.svg"></use>
+    </svg>
+    <svg id="icon-sun">
+      <use href="../img/sunMod.svg"></use>
+    </svg>
+    <svg id="icon-ball">
+      <use href="../img/balll.svg"></use>
+    </svg>
+  </div>
+
+  <div class="mobile-menu__container" id="mobile-menu__container" data-menu>
+    <a href="../index.html" class="logo-link mobile-menu__logo">
+      <img
+        loading="lazy"
+        src="../img/logo.svg"
+        alt="logo"
+        class="mobile-menu__logo-img"
+    /></a>
+    <ul class="nav-list">
+      <li class="nav-list__item">
+        <a href="../index.html">HOME</a>
+      </li>
+      <li class="nav-list__item">
+        <a href="../catalog.html">CATALOG</a>
+      </li>
+      <li class="nav-list__item">
+        <a href="../library.html">MY LIBRARY</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="backdrop visually-hidden" data-backdrop></div>
+
+  <!-- <script type="module" src="../js/header.js"></script> -->
+</header>
+
+    <div class="hero-container">
+  <h1></h1>
+</div>
+<!-- Modal için HTML yapısı -->
+<div class="modal" id="movieModal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <div class="modal-body">
+      <div class="modal-body-img"></div>
+      <div class="modal-body-info"></div>
+    </div>
+    <!-- <h2>Film Detayları</h2> -->
+    <p id="movieDescription"></p>
+    <!-- <button id="closeTrailerBtn">Close Trailer</button> -->
+
+    <!-- Film fragmanı iframe -->
+    <div id="trailerContainer" style="display: none">
+      <iframe
+        id="trailerIframe"
+        frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media;
+        gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+</div>
+
+    <div class="search-container">
+      <input type="text" id="genre-select" placeholder="Search" />
+      <select id="year-select">
+        <option value="">Year</option>
+      </select>
+      <img id="search-btn" src="data:image/svg+xml,%3csvg%20width='40'%20height='40'%20viewBox='0%200%2040%2040'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3ccircle%20cx='20'%20cy='20'%20r='20'%20fill='url(%23paint0_linear_411_17558)'/%3e%3cpath%20d='M19.25%2025.25C22.5637%2025.25%2025.25%2022.5637%2025.25%2019.25C25.25%2015.9363%2022.5637%2013.25%2019.25%2013.25C15.9363%2013.25%2013.25%2015.9363%2013.25%2019.25C13.25%2022.5637%2015.9363%2025.25%2019.25%2025.25Z'%20stroke='white'%20stroke-width='1.3'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cpath%20d='M26.7508%2026.7498L23.4883%2023.4873'%20stroke='white'%20stroke-width='1.3'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_411_17558'%20x1='4.88576'%20y1='2.85813'%20x2='33.9445'%20y2='39.0278'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23FFC226'/%3e%3cstop%20offset='1'%20stop-color='%23F84119'/%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e" alt="Ara button" />
+    </div>
+    <div id="movie-list" class="movies"></div>
+    <div class="catalog"></div>
+    <div class="pagination"></div>
+
+    <footer class="footer">
+  <p class="footer-text">
+    © 2023 | All Rights Reserved | Developed with
+    <span class="heart">
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="#FF6B00"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
+                 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5 2.09
+                 C13.09 3.81 14.76 3 16.5 3
+                 19.58 3 22 5.42 22 8.5
+                 c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+        />
+      </svg>
+    </span>
+    by
+    <a href="#" id="team-link" data-modal-open>GoIT Students</a>
+  </p>
+</footer>
+<!-- Scroll to Top Button -->
+<button id="scrollTopBtn" title="Go to top">:arrow_up:</button>
+<!-- Modal -->
+<div id="team-modal" class="modal-footer is-hidden" data-modal>
+  <div class="modal-content-footer">
+    <span class="close" data-modal-close>&times;</span>
+    <h2>Meet the Team</h2>
+    <ul class="team-list">
+      <li class="team-member">
+        <img
+          src="../img/nurAleyna.jpeg"
+          alt="Nur Aleyna Pektaş"
+          class="member-photo"
+        />
+        <h3 class="member-name">Nur Aleyna Pektaş</h3>
+        <div class="member-links">
+          <a
+            href="https://github.com/NurAleynaPektas"
+            target="_blank"
+            class="icon-link"
+          >
+            <i class="fab fa-github"></i>
+            GitHub
+          </a>
+          <a
+            href="https://linkedin.com/in/nur-aleyna-pektaş-16b401332"
+            target="_blank"
+            class="icon-link"
+          >
+            <i class="fab fa-linkedin"></i>
+            LinkedIn
+          </a>
+        </div>
+      </li>
+      <li class="team-member">
+        <img
+          src="../img/emreYiğit.jpeg"
+          alt="Emre Yiğit"
+          class="member-photo"
+        />
+        <h3 class="member-name">Emre Yiğit</h3>
+        <div class="member-links">
+          <a
+            href="https://github.com/emrey1git"
+            target="_blank"
+            class="icon-link"
+          >
+            <i class="fab fa-github"></i>
+            GitHub
+          </a>
+          <a
+            href="https://linkedin.com/in/emreyigitt"
+            target="_blank"
+            class="icon-link"
+          >
+            <i class="fab fa-linkedin"></i>
+            LinkedIn
+          </a>
+        </div>
+      </li>
+      <li class="team-member">
+        <img
+          src="../img/ozgeSevim.jpeg"
+          alt="Özge Sevim"
+          class="member-photo"
+        />
+        <h3 class="member-name">Özge Sevim</h3>
+        <div class="member-links">
+          <a
+            href="https://github.com/OzgeSevim"
+            target="_blank"
+            class="icon-link"
+          >
+            <i class="fab fa-github"></i>
+            GitHub
+          </a>
+          <a
+            href="https://linkedin.com/in/özge-sevim-99608a332"
+            target="_blank"
+            class="icon-link"
+          >
+            <i class="fab fa-linkedin"></i>
+            LinkedIn
+          </a>
+        </div>
+      </li>
+      <li class="team-member">
+        <img
+          src="../img/hayrunisa.jpeg"
+          alt="Hayrunisa Turan"
+          class="member-photo"
+        />
+        <h3 class="member-name">Hayrunisa Turan</h3>
+        <div class="member-links">
+          <a
+            href="https://github.com/hayrunisatrn"
+            target="_blank"
+            class="icon-link"
+          >
+            <i class="fab fa-github"></i>
+            GitHub
+          </a>
+          <a
+            href="https://linkedin.com/in/hayrunisa-turan-7550b4119"
+            target="_blank"
+            class="icon-link"
+          >
+            <i class="fab fa-linkedin"></i>
+            LinkedIn
+          </a>
+        </div>
+      </li>
+      <li class="team-member">
+        <img src="../img/ceren.jpeg" alt="Ceren Şahin" class="member-photo" />
+        <h3 class="member-name">Ceren Şahin</h3>
+        <div class="member-links">
+          <a
+            href="https://github.com/CenCeren"
+            target="_blank"
+            class="icon-link"
+          >
+            <i class="fab fa-github"></i>
+            GitHub
+          </a>
+          <a
+            href="https://linkedin.com/in/hediye-ceren-karabacak-şahin-079ba57a"
+            target="_blank"
+            class="icon-link"
+          >
+            <i class="fab fa-linkedin"></i>
+            LinkedIn
+          </a>
+        </div>
+      </li>
+      <li class="team-member">
+        <img
+          src="../img/okanOzdemirr.jpeg"
+          alt="Okan Özdemir"
+          class="member-photo"
+        />
+        <h3 class="member-name">Okan Özdemir</h3>
+        <div class="member-links">
+          <a
+            href="https://github.com/Okan-ozdemir"
+            target="_blank"
+            class="icon-link"
+          >
+            <i class="fab fa-github"></i>
+            GitHub
+          </a>
+          <a
+            href="https://linkedin.com/in/okan-özdemir-6a7b99105"
+            target="_blank"
+            class="icon-link"
+          >
+            <i class="fab fa-linkedin"></i>
+            LinkedIn
+          </a>
+        </div>
+      </li>
+      <li class="team-member">
+        <img
+          src="../img/tuana.jpeg"
+          alt="Tuana Albayrak"
+          class="member-photo"
+        />
+        <h3 class="member-name">Tuana Albayrak</h3>
+        <div class="member-links">
+          <a
+            href="https://github.com/for-tuana"
+            target="_blank"
+            class="icon-link"
+          >
+            <i class="fab fa-github"></i>
+            GitHub
+          </a>
+          <a href="#" target="_blank" class="icon-link">
+            <i class="fab fa-linkedin"></i>
+            LinkedIn
+          </a>
+        </div>
+      </li>
+      <li class="team-member">
+        <img
+          src="../img/ahmetEmreHarsa.jpeg"
+          alt="Ahmet Emre Harsa"
+          class="member-photo"
+        />
+        <h3 class="member-name">Ahmet Emre Harsa</h3>
+        <div class="member-links">
+          <a href="https://github.com/5yzygy" target="_blank" class="icon-link">
+            <i class="fab fa-github"></i>
+            GitHub
+          </a>
+          <a
+            href="https://linkedin.com/in/aeharsa"
+            target="_blank"
+            class="icon-link"
+          >
+            <i class="fab fa-linkedin"></i>
+            LinkedIn
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+  </body>
+</html>

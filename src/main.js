@@ -1,4 +1,4 @@
-// import { header } from "./js/header.js";
+import { header } from "./js/header.js";
 import { hero } from "./js/hero.js";
 import { getMovies } from "./js/weeklyTrends.js";
 // import { moviePopUp } from "./js/moviePopUp";
@@ -8,7 +8,7 @@ import { catalogFun } from "./js/catalog.js";
 // import { myLibrary } from "./js/myLibrary";
 import { scroll } from "./js/scroll.js";
 
-// header();
+header();
 hero();
 getMovies();
 // moviePopUp();

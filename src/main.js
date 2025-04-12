@@ -1,12 +1,12 @@
-import { header } from "./js/header";
-import { hero } from "./js/hero";
-import { getMovies } from "./js/weeklyTrends";
+import { header } from "./js/header.js";
+import { hero } from "./js/hero.js";
+import { getMovies } from "./js/weeklyTrends.js";
 // import { moviePopUp } from "./js/moviePopUp";
-import { upComing } from "./js/upComing";
-import { footer } from "./js/footer";
-import { catalogFun } from "./js/catalog";
+import { upComing } from "./js/upComing.js";
+import { footer } from "./js/footer.js";
+import { catalogFun } from "./js/catalog.js";
 // import { myLibrary } from "./js/myLibrary";
-import { scroll } from "./js/scroll";
+import { scroll } from "./js/scroll.js";
 
 header();
 hero();

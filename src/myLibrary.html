@@ -13,6 +13,17 @@
     />
   </head>
   <body>
+    <div id="loader-wrapper">
+      <div class="popcorn-loader">
+        <div class="popcorn"></div>
+        <div class="popcorn"></div>
+        <div class="popcorn"></div>
+        <div class="bucket"></div>
+      </div>
+    </div>
+    <!-- Sayfa içeriği -->
+    <div id="content" style="display: none"></div>
+
     <button id="scrollToTopBtn" title="Scroll Up">
       <img
         src="../img/logo.svg"
@@ -39,5 +50,6 @@
     <script type="module" src="./js/myLibrary.js"></script>
 
     <script type="module" src="./main.js"></script>
+    <script type="module" src="./js/loader.js"></script>
   </body>
 </html>
